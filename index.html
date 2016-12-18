@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PI-RADS</title>
+</head>
+<body>
+
+<img src="Resources/images/Base.png" usemap="#imageMap" title="https://www.acr.org/~/media/ACR/Documents/PDF/QualitySafety/Resources/PIRADS/PIRADS-V2.pdf?la=en">
+
+<map name="imageMap">
+
+<area shape="poly" coords="90,46,101,46,111,47,115,49,120,52,123,55,127,60,133,70,136,78,137,88,137,94,137,97,138,104,140,111,53,111,52,110,51,106,50,100,50,96,49,91,50,87,52,81,54,75,56,72,58,69,61,65,65,60,70,56,72,54,79,51,87,48" href="***TZa Right***.html" alt="TZa Right" title="TZa Right"/>
+
+<area shape="poly" coords="172,46,178,46,190,47,198,50,207,54,215,60,222,69,226,77,228,82,229,87,230,93,231,96,230,100,229,106,227,110,203,111,156,111,144,111,140,111,140,109,142,103,143,99,143,93,142,86,143,80,145,75,150,64,156,57,163,50,167,48" href="***TZa Left***.html" alt="TZa Left" title="TZa Left"/>
+
+<area shape="poly" coords="54,111,140,111,140,133,131,133,116,133,106,133,96,133,88,133,82,133,73,131,68,129,64,127,60,122,58,120,55,116" href="***TZp Right***.html" alt="TZp Right" title="TZp Right"/>
+
+<area shape="poly" coords="140,111,226,111,226,112,223,118,219,123,217,126,211,130,212,129,205,132,190,133,167,133,140,133" href="***TZp Left***.html" alt="TZp Left" title="TZp Left"/>
+
+<area shape="poly" coords="139,31,138,42,137,57,135,77,133,70,129,63,124,57,120,53,116,50,108,47,103,46,96,46,86,48,83,49,77,52,69,58,66,60,58,69,53,78,51,85,50,89,49,96,48,89,46,83,42,78,39,76,37,75,32,76,32,75,33,75,40,66,47,59,51,56,56,52,62,49,69,45,77,42,82,40,91,37,98,35,108,34,119,32,129,31" href="***AS Right***.html" alt="AS Right" title="AS Right"/>
+
+<area shape="poly" coords="142,31,154,31,164,32,169,33,179,34,185,35,193,37,199,39,206,41,212,43,217,46,223,49,228,52,234,57,240,62,246,70,249,76,247,76,244,75,240,75,235,83,232,92,231,95,230,95,228,82,224,73,221,68,218,64,212,58,206,53,201,50,192,47,183,46,177,46,166,49,161,52,156,56,152,61,149,67,145,78,144,78,144,61,144,57,143,52,143,45,143,38" href="***AS Left***.html" alt="AS Left" title="AS Left"/>
+
+<area shape="poly" coords="139,133,139,192,131,193,119,192,107,192,103,191,96,188,89,183,87,181,82,177,78,172,72,165,68,158,65,153,65,150,64,146,61,139,59,134,58,129,58,123,59,121,59,122,63,125,67,129,72,131,76,133" href="***CZ Right***.html" alt="CZ Right" title="CZ Right"/>
+
+<area shape="poly" coords="191,183,186,186,182,188,176,191,174,192,166,192,161,193,155,193,148,192,141,192,141,133,203,133,208,131,211,129,214,127,218,124,221,121,223,120,223,126,222,129,221,133,219,140,217,145,215,150,213,155,210,161,208,164,206,167,200,173" href="***CZ Left***.html" alt="CZ Left" title="CZ Left"/>
+
+<area shape="poly" coords="35,74,40,75,45,82,49,92,51,100,54,111,52,111,45,113,30,117,15,121,15,116,18,107,19,101,22,93,27,84,31,79" href="***PZa Right***.html" alt="PZa Right" title="PZa Right"/>
+
+<area shape="poly" coords="54,111,57,122,61,140,64,158,65,166,67,174,68,180,69,188,65,188,57,185,53,184,48,182,42,180,36,176,24,166,19,158,16,151,14,141,14,131,15,120,17,120,25,117,36,114,46,112" href="***PZpl Right***.html" alt="PZpl Right" title="PZpl Right"/>
+
+<area shape="poly" coords="265,125,256,123,251,121,247,120,242,118,238,116,231,113,226,109,229,104,231,98,231,94,232,89,234,85,236,80,238,77,242,75,246,74,250,76,254,84,257,92,259,98,261,104,263,111,265,121" href="***PZa Left***.html" alt="PZa Left" title="PZa Left"/>
+
+<area shape="poly" coords="228,111,265,124,265,131,265,135,263,142,261,149,259,155,257,159,252,164,248,168,242,173,236,177,228,181,219,184,209,186,209,185,212,175,214,162,225,113" href="***PZpl Left***.html" alt="PZpl Left" title="PZpl Left"/>
+
+</map>
+
+<input type="button" value="Tell me selected areas" name="validate" onClick="onButtonClicked()"> <br>
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/ImageMapster/dist/jquery.imagemapster.js"></script>
+
+<script>
+
+    function onButtonClicked() {
+        var selectedIndexes = img.mapster('get', 'isSelected').split(",");
+        var message = [];
+        $.each(selectedIndexes, function (i, index) {
+            message += "  " + $('area')[index].alt + "\n";
+        });
+
+        alert("Selected areas\n" + message);
+    }
+
+    img = $('img').mapster( {
+                    fillOpacity: 0.3,
+                    fill: false,
+                    stroke: true,
+                    highlight: true
+                });
+
+    $('area').on('click', function() {
+        console.log($(this).attr('alt') + ' clicked');
+    });
+
+</script>
+
+</body>
+</html>

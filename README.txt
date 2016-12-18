@@ -1,0 +1,1 @@
+Image(s) are used from https://www.acr.org/~/media/ACR/Documents/PDF/QualitySafety/Resources/PIRADS/PIRADS-V2.pdf?la=en
